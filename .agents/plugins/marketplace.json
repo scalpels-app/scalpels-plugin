@@ -1,0 +1,20 @@
+{
+  "name": "scalpels",
+  "interface": {
+    "displayName": "Scalpels"
+  },
+  "plugins": [
+    {
+      "name": "scalpels",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}
