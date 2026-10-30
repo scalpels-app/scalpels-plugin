@@ -1,0 +1,15 @@
+{
+  "name": "scalpels",
+  "description": "Claude plugins for Scalpels, the catalog of free self-hosted Laravel apps.",
+  "owner": {
+    "name": "Artisan Build",
+    "url": "https://artisan.build"
+  },
+  "plugins": [
+    {
+      "name": "scalpels",
+      "source": "./",
+      "description": "One connection to your self-hosted Scalpels apps, plus skills for running them well."
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "scalpels": {
+      "type": "http",
+      "url": "https://scalpels.app/mcp"
+    }
+  }
+}
