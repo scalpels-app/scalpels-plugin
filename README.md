@@ -42,6 +42,26 @@ The OAuth connection grants the `mcp:use` scope. With it, Claude can:
 Each team still enforces your current role. Revoking the connection on the
 **Agent access** page stops the current token and its ability to refresh.
 
+## Unattended jobs
+
+A scheduled job that only collects telemetry or investigates problems doesn't
+need to deploy, connect sites or change anything in your apps. MCP clients hold
+one connection per server, so the connection itself can't be narrowed per job.
+Use your client's per-tool permissions instead:
+
+- Allow the read tools (`app_read`, `installed_apps`, `app_tools`,
+  `list_deployments`, `deployment_status`, `deployment_drift`, `docs`) without
+  asking.
+- Set `app_write`, `app_call`, `deploy_app`, `connect_site`, `resume_deployment`,
+  `isolate_app` and `restore_app` to **ask**.
+- Set `app_confirm` (destructive app actions) to **ask** or **never**.
+- Run scheduled tasks without automatic approval. A job that reaches a write
+  then stops at the approval prompt instead of acting on its own.
+
+This works because Scalpels routes every app call through one of three doors
+(`app_read`, `app_write`, `app_confirm`) according to what the tool does, so
+the client can gate each door separately.
+
 ## Where your data goes
 
 Your apps and their data live in your own Laravel Cloud or Forge account.
