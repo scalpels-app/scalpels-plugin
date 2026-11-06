@@ -20,6 +20,7 @@
     "capabilities": ["Read fleet", "Deploy apps", "Investigate telemetry"],
     "websiteURL": "https://scalpels.app",
     "privacyPolicyURL": "https://scalpels.app/privacy",
+    "termsOfServiceURL": "https://scalpels.app/terms",
     "composerIcon": "./.claude-plugin/icon.png",
     "logo": "./.claude-plugin/icon.png"
   }

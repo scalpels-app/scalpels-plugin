@@ -93,12 +93,9 @@ app for what, when, and whether it succeeded.
 If you'd rather not route through Scalpels at all, point your client directly
 at your apps' own MCP endpoints. Fork button is up and to the right.
 
-[Privacy](https://scalpels.app/privacy) — directory submission depends on this
-policy page shipping in `artisan-build/scalpels.app`. The initial policy dated
-October 30, 2026 is currently local, not pushed or deployed; see the
-[coordinating source thread](https://ampcode.com/threads/T-01a18cc3-b1b3-77dc-8ec5-9d51241d8843)
-until an app PR is available. The intended URL is configured in both manifests;
-a local validator passing does not mean the page is live.
+[Privacy](https://scalpels.app/privacy) · [Terms](https://scalpels.app/terms) —
+both policies, published October 30, 2026, are live on scalpels.app and are
+configured in both manifests.
 
 ## Package references
 
@@ -121,11 +118,13 @@ rasterized without redrawing to a 1024 × 1024 PNG with ImageMagick:
 magick -background none -density 192 ../scalpels.app/public/favicon.svg -resize 1024x1024 -strip .claude-plugin/icon.png
 ```
 
-Review the icon before the first directory submission: Claude's first listing
-icon is permanent. A successful local validation does not replace a directory
-safety scan or policy review. The repository must also be public before Claude
-directory submission; that visibility change and all directory submissions
-remain human steps.
+Review the icon before the plugin is first saved or submitted in Claude's
+developer portal: that first save sets the listing icon, and later changes to
+the file don't update it. A successful local validation does not replace the
+directory's safety scan or policy review. Claude's directory can validate and
+review a private repository, but the repository must be public before the
+listing goes live; that visibility change and all directory submissions remain
+human steps.
 
 ## License
 
