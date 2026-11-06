@@ -1,12 +1,14 @@
 {
   "name": "scalpels",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "One connection to your self-hosted Scalpels apps, plus skills for running them well.",
   "author": {
     "name": "Artisan Build",
     "url": "https://artisan.build"
   },
   "homepage": "https://scalpels.app",
+  "privacyPolicyUrl": "https://scalpels.app/privacy",
+  "termsOfServiceUrl": "https://scalpels.app/terms",
   "repository": "https://github.com/artisan-build/scalpels-plugin",
   "license": "MIT",
   "keywords": ["laravel", "laravel-cloud", "forge", "self-hosted", "telemetry", "mcp"]
