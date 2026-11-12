@@ -1,0 +1,42 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "scalpels",
+  "version": "0.3.0",
+  "description": "One connection to your self-hosted Scalpels apps, plus skills for running them well.",
+  "author": {
+    "name": "Artisan Build",
+    "url": "https://artisan.build"
+  },
+  "homepage": "https://scalpels.app",
+  "repository": "https://github.com/scalpels-app/scalpels-plugin",
+  "license": "MIT",
+  "keywords": [
+    "laravel",
+    "laravel-cloud",
+    "forge",
+    "self-hosted",
+    "telemetry",
+    "mcp"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Scalpels",
+        "shortDescription": "Run your self-hosted apps",
+        "longDescription": "Connect to your Scalpels teams and self-hosted Laravel apps. Orient in your fleet, plan deployments, connect sites, and investigate Hone telemetry without changing your apps by default. Requires a Scalpels account; Hone investigations require an installed Hone deployment.",
+        "developerName": "Artisan Build",
+        "category": "Developer Tools",
+        "capabilities": [
+          "Read fleet",
+          "Deploy apps",
+          "Investigate telemetry"
+        ],
+        "websiteURL": "https://scalpels.app",
+        "privacyPolicyURL": "https://scalpels.app/privacy",
+        "termsOfServiceURL": "https://scalpels.app/terms",
+        "composerIcon": "./.claude-plugin/icon.png",
+        "logo": "./.claude-plugin/icon.png"
+      }
+    }
+  }
+}
