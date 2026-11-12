@@ -37,7 +37,8 @@ package, so hosts that support that format can install it from the repository.
 In GitHub Copilot CLI:
 
 ```shell
-copilot plugin install scalpels-app/scalpels-plugin
+copilot plugin marketplace add scalpels-app/scalpels-plugin
+copilot plugin install scalpels@scalpels
 ```
 
 Every client uses the same `skills/` directory and the same MCP endpoint;
