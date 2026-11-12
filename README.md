@@ -28,9 +28,21 @@ codex plugin add scalpels@scalpels
 ```
 
 For a local checkout, use `codex plugin marketplace add /absolute/path/to/scalpels-plugin`
-instead of the GitHub source. Both clients use the same `skills/` directory
-and `.mcp.json` endpoint; installing in one client does not install in the other.
-Do not add the MCP server separately as well.
+instead of the GitHub source.
+
+### GitHub Copilot CLI and other Agent Plugins hosts
+
+This repository is also an [Agent Plugins 1.0](https://agent-plugins.org)
+package, so hosts that support that format can install it from the repository.
+In GitHub Copilot CLI:
+
+```shell
+copilot plugin install scalpels-app/scalpels-plugin
+```
+
+Every client uses the same `skills/` directory and the same MCP endpoint;
+installing in one client does not install in the others. Do not add the MCP
+server separately as well.
 
 Authorize the Scalpels OAuth connection when prompted by your client so you
 can sign in and approve access. There are no tokens to copy.
@@ -45,7 +57,7 @@ Scalpels instead. See the [agent docs](https://scalpels.app/docs/scalpels/agents
 | `scalpels` MCP server | `https://scalpels.app/mcp`, authenticated with OAuth |
 | `scalpels-fleet` skill | Orients your agent in your teams and installed apps, and sets the ground rules for deploying, connecting sites and calling apps |
 | `hone-investigate` skill | Checks Hone coverage, errors, slow routes and abnormal telemetry per app; proposes fixes without making changes |
-| Claude and Codex manifests and marketplaces | Install the same plugin from this repository in either client |
+| Agent Plugins, Claude and Codex manifests and marketplaces | Install the same plugin from this repository in any of these clients |
 
 ## What your agent can do with it
 
@@ -99,16 +111,22 @@ configured in both manifests.
 
 ## Package references
 
-The Codex compatibility manifest follows OpenAI's official
+The root `plugin.json` and `mcp.json` follow the
+[Agent Plugins 1.0 specification](https://agent-plugins.org). Codex, ChatGPT
+and other OpenAI surfaces read the portable package; OpenAI's listing metadata
+lives under `extensions.com.openai` in `plugin.json`, as OpenAI's
 [package guide](https://developers.openai.com/plugins/build/plugins) and
-[manifest field reference](https://developers.openai.com/plugins/deploy/submission#automatically-provide-submission-and-review-information).
-Its `skills` and `mcpServers` paths are relative to the plugin root. The native
-Codex marketplace at `.agents/plugins/marketplace.json` uses the documented
-[marketplace format](https://developers.openai.com/plugins/build/plugins#marketplace-metadata)
-and coexists with `.claude-plugin/marketplace.json` without moving the Claude
-plugin. The shared `.mcp.json` declares the remote HTTP URL; OAuth endpoints,
-dynamic client registration and the `mcp:use` scope are discovered from the
-server's OAuth metadata. No client secrets or bearer tokens are packaged.
+[manifest field reference](https://developers.openai.com/plugins/deploy/submission#automatically-provide-submission-and-review-information)
+describe. The Codex marketplace at `.agents/plugins/marketplace.json` uses the
+documented [marketplace format](https://developers.openai.com/plugins/build/plugins#marketplace-metadata).
+
+Claude Code doesn't read the Agent Plugins files. It uses
+`.claude-plugin/plugin.json`, `.claude-plugin/marketplace.json` and `.mcp.json`.
+`.mcp.json` and `mcp.json` declare the same endpoint; Claude needs
+`"type": "http"` and Agent Plugins needs `"type": "streamable-http"`, so keep
+both URLs in step. OAuth endpoints, dynamic client registration and the
+`mcp:use` scope are discovered from the server's OAuth metadata. No client
+secrets or bearer tokens are packaged.
 
 The listing icon is the existing Scalpels mark from `public/favicon.svg` in
 [`artisan-build/scalpels.app`](https://github.com/artisan-build/scalpels.app/blob/66ac00547525bae9dc69d3cb4df19bf87e0aeb07/public/favicon.svg),
