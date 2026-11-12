@@ -7,7 +7,7 @@
     "url": "https://artisan.build"
   },
   "homepage": "https://scalpels.app",
-  "repository": "https://github.com/artisan-build/scalpels-plugin",
+  "repository": "https://github.com/scalpels-app/scalpels-plugin",
   "license": "MIT",
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",
