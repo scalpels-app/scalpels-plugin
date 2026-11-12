@@ -14,7 +14,7 @@ has installed.
 ### Claude Code
 
 ```shell
-claude plugin marketplace add artisan-build/scalpels-plugin
+claude plugin marketplace add scalpels-app/scalpels-plugin
 claude plugin install scalpels@scalpels
 ```
 
@@ -23,7 +23,7 @@ claude plugin install scalpels@scalpels
 With a recent Codex CLI that supports `codex plugin`:
 
 ```shell
-codex plugin marketplace add artisan-build/scalpels-plugin
+codex plugin marketplace add scalpels-app/scalpels-plugin
 codex plugin add scalpels@scalpels
 ```
 
